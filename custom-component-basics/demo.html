@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+    simple-component {
+        display: block;
+        border: 1px black solid;
+    }
+  </style>
+  <script type="module">
+  import './simple-component.js'
+  </script>
+</head>
+<body>
+ <h2>Simple custom element</h2> 
+<simple-component placeholder="Let's start"></simple-component>
+<label>enter placeholder text:</label>
+<input id="new-text"  type="text" />
+<button onclick="updatePlaceHolder()">update text</button>
+  
+<script>
+ function updatePlaceHolder() {
+    const input = document.querySelector('#new-text');
+    const simple = document.querySelector('simple-component');
+    simple.placeholder = input.value;
+ }
+</script>
+
+</body>
+</html>
