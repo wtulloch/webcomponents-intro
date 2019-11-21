@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "es-dev-server --app-index custom-component-basics/demo.html --node-resolve --open --watch"
   },
   "author": "William Tulloch <me@williamtulloch.com>",
   "license": "ISC",
   "devDependencies": {
+    "es-dev-server": "^1.23.1",
     "typescript": "^3.7.2"
   },
   "dependencies": {
