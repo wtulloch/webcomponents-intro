@@ -2,7 +2,7 @@ export default class SimpleComponent extends HTMLElement {
     
     constructor(){
         super();
-        console.log('SimpleComponent:constructor');
+        console.log(`SimpleComponent ${this.id} :constructor`);
     }
 
     set placeholder(value) {
@@ -13,18 +13,22 @@ export default class SimpleComponent extends HTMLElement {
        return this.getAttribute('placeholder');
     }
 
+    get id() {
+        return this.getAttribute('id');
+    }
+
    static get observedAttributes() {
-        return ['placeholder'];
+        return [];
     }
 
     connectedCallback() {
-        console.log("SimpleComponent: connectedCallback")
+        console.log(`SimpleComponent ${this.id}: connectedCallback`)
        
         this._render();
     }
 
     disconnectedCallback() {
-        console.log("SimpleComponent: disconnectedCallback");
+        console.log(`SimpleComponent ${this.id}: disconnectedCallback`);
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -37,7 +41,7 @@ export default class SimpleComponent extends HTMLElement {
     _render() {
         this.innerHTML = `
         <div>
-            <p>The placeholder is: ${this.getAttribute('placeholder')}</p>
+            <p>${this.placeholder}</p>
         </div>
         `;
     }

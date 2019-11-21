@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "es-dev-server --app-index custom-component-basics/demo.html --node-resolve --open --watch",
-    "start:input": "es-dev-server --app-index src/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch"
+    "start:input": "es-dev-server --app-index src/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch",
+    "start:slot": "es-dev-server --app-index src/slot-example/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch"
+
   },
   "author": "William Tulloch <me@williamtulloch.com>",
   "license": "ISC",
