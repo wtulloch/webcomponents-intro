@@ -5,6 +5,9 @@ export class TgInput extends LitElement {
     
   static get styles () {
     return css `
+    :host {
+      display: block;
+    }
     `
   }
     constructor() {
@@ -15,7 +18,7 @@ export class TgInput extends LitElement {
 
     render(){
       return html `
-      
+        <label>input label</label> <input type="text" placeholder="placeholder text" />
       `;
     }
 }

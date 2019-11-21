@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "es-dev-server --app-index custom-component-basics/demo.html --node-resolve --open --watch"
+    "start": "es-dev-server --app-index custom-component-basics/demo.html --node-resolve --open --watch",
+    "start:input": "es-dev-server --app-index src/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch"
   },
   "author": "William Tulloch <me@williamtulloch.com>",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/preset-typescript": "^7.7.2",
     "es-dev-server": "^1.23.1",
     "typescript": "^3.7.2"
   },
