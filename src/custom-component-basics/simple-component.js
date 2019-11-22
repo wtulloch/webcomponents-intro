@@ -1,6 +1,6 @@
 export default class SimpleComponent extends HTMLElement {
-    
-    constructor(){
+
+    constructor() {
         super();
         console.log(`SimpleComponent ${this.id} :constructor`);
     }
@@ -10,20 +10,17 @@ export default class SimpleComponent extends HTMLElement {
     }
 
     get placeholder() {
-       return this.getAttribute('placeholder');
+        return this.getAttribute('placeholder');
     }
 
     get id() {
         return this.getAttribute('id');
     }
 
-   static get observedAttributes() {
-        return [];
-    }
 
     connectedCallback() {
         console.log(`SimpleComponent ${this.id}: connectedCallback`)
-       
+        this.attachShadow({});
         this._render();
     }
 
@@ -31,8 +28,12 @@ export default class SimpleComponent extends HTMLElement {
         console.log(`SimpleComponent ${this.id}: disconnectedCallback`);
     }
 
+
+    static get observedAttributes() {
+        return [];
+    }
     attributeChangedCallback(name, oldValue, newValue) {
-        
+
         if (oldValue !== newValue) {
             console.log(`SimpleComponent: ${name} has changed`);
             this._render();
@@ -45,8 +46,6 @@ export default class SimpleComponent extends HTMLElement {
         </div>
         `;
     }
-
-   
 }
 
 if (!customElements.get('simple-component')) {
