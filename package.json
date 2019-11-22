@@ -10,11 +10,10 @@
     "start:custom": "es-dev-server --app-index src/2-custom-element-simple/demo.html --node-resolve --open --watch",
     "start:shadow": "es-dev-server --app-index src/3-custom-element-shadowdom/demo.html --node-resolve --open --watch",
     "start:lithtml": "es-dev-server --app-index src/4-custom-element-shadowdom-litHtml/demo.html --node-resolve --open --watch",
-    
-    "start:input": "es-dev-server --app-index src/tg-input/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch",
-    "start:slot": "es-dev-server --app-index src/slot-example/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch"
-
+    "start:events": "es-dev-server --app-index src/5-shadowdom-events/demo.html --node-resolve --open --watch",
+    "start:input": "es-dev-server --app-index src/tg-input/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch"
   },
+  
   "author": "William Tulloch <me@williamtulloch.com>",
   "license": "ISC",
   "devDependencies": {
