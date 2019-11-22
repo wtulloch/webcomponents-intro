@@ -4,37 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../base.css" />
-  <style>
-    #templateContainer {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      border: 1px solid black;
-      width: 100%;
-      height: 100%;
-      grid-area: main;
-    }
-
-    .dashboard-card {
-      width: 250px;
-      height: 200px;
-      display: block;
-      margin: 10px;
-      border: 1px solid darkgray;
-      padding: 5px;
-    }
-
-    h1 {
-      grid-area: header;
-    }
-
-    .sidebar {
-      grid-area: sidebar;
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
-
+  <link rel="stylesheet" href="template-example.css" />
 </head>
 
 <body>
@@ -44,6 +14,7 @@
       <p>This is just some text</p>
     </div>
   </template>
+
   <main>
     <h1>Sample template usage</h1>
     <div class="sidebar">
@@ -53,19 +24,19 @@
 
   </main>
 
-  <script>
-    let count = 1;
-    function displayTemplate() {
-      const template = document.querySelector('#template');
-      const targetEl = document.querySelector('#templateContainer');
-      const cloneTemplate = document.importNode(template.content, true);
-      const para = cloneTemplate.querySelector('p')
-      para.innerText = " This is card number " + count;
-      count += 1;
+ <script>
+ let count = 1;
+function displayTemplate() {
+  const template = document.querySelector('#template');
+  const targetEl = document.querySelector('#templateContainer');
+  const cloneTemplate = document.importNode(template.content, true);
+  const para = cloneTemplate.querySelector('p')
+  para.innerText = " This is card number " + count;
+  count += 1;
 
-      targetEl.appendChild(cloneTemplate);
-    }
-  </script>
+  targetEl.appendChild(cloneTemplate);
+}
+ </script> 
 
 </body>
 

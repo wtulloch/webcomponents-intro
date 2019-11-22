@@ -5,6 +5,14 @@
     <body>
         <h1>Simple Input - TS</h1>
         <tg-input></tg-input>
+        <tg-button onclick="clicked">This is a test</tg-button>
         <script type="module" src="../tg-input/tg-input.ts"></script>
+        <script type="module" src="../../tg-button/tg-button.ts"></script>
+
+        <script>
+        function clicked(e) {
+            alert('button clicked');
+        }
+        </script>
     </body>
 </html>

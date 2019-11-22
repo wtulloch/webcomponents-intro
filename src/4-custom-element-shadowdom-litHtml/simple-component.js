@@ -1,8 +1,10 @@
+import {html, render} from 'lit-html/lit-html.js';
 export default class SimpleComponent extends HTMLElement {
 
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
+        this._render();
     }
 
     set placeholder(value) {
@@ -17,11 +19,6 @@ export default class SimpleComponent extends HTMLElement {
         return this.getAttribute('id');
     }
 
-
-    connectedCallback() {
-        console.log(`SimpleComponent ${this.id}: connectedCallback`)
-        this._render();
-    }
 
     disconnectedCallback() {
         console.log(`SimpleComponent ${this.id}: disconnectedCallback`);
@@ -39,24 +36,24 @@ export default class SimpleComponent extends HTMLElement {
         }
     }
     _render() {
-        this.shadowRoot.innerHTML = `
+        const toRender = html `
         <style>
-       :host {
-            display: flex;
-            border: 1px black solid;
-            flex-grow: 0;
-            width: 250px;
-            height: 250px;
-            margin: 10px;
-            background-color: white;
-            padding: 20px;
-            align-items: center;
-            justify-items: center;
-          }
-          </style>
-            <p>${this.placeholder}</p>
-        
-        `;
+        :host {
+             display: block;
+             border: 1px black solid;
+             flex-grow: 0;
+             width: 250px;
+             height: 250px;
+             margin: 10px;
+             background-color: darksalmon;
+             padding: 20px;
+           }
+           </style>
+         <div>
+             <p>${this.placeholder}</p>
+         </div>
+        `
+       render( toRender, this);
     }
 }
 

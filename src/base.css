@@ -50,3 +50,9 @@ button:focus {
 button:active {
     transform: scale(0.99);
 }
+
+.btn {
+    display: block;
+    border: 1px solid plum;
+    background-color: whitesmoke;
+}

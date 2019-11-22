@@ -3,8 +3,28 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet"  href="../base.css" />
-  <link rel="stylesheet" href="custom-element-simple.css" />
+  <link rel="stylesheet" type="text/css" href="../base.css" />
+  <style>
+    
+   
+    simple-component > div > p {
+      font-family: cursive;
+      font-size: 2rem;
+      
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      grid-area: sidebar;
+    }
+   
+    #component-container {
+      display: flex;
+      grid-area: main;
+
+    }
+  </style>
 
   <script type="module">
     import './simple-component.js';
@@ -21,10 +41,9 @@
     <button id="add-button" onclick="addNewComponent()">add new component</button>
     <button id="remove-button" disabled onclick="removeComponent('two')">remove component</button>
   </div>
-
   <div id="component-container">
       <simple-component id="one" placeholder="I was defined in the body"></simple-component>
-    </div>
+  </div>
 </main>
 
   <script>

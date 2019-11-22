@@ -3,7 +3,7 @@ import  './tg-input.css';
 @customElement('tg-input')
 export class TgInput extends LitElement {
     
-  
+
   static get styles () {
     return css `
     :host {
@@ -18,6 +18,8 @@ export class TgInput extends LitElement {
     }
     `;
   }
+  @property({type: String, reflect: true})
+  placeholder: String = "placeholder";
     constructor() {
       super();  
     }

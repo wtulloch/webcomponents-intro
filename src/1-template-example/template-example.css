@@ -1,0 +1,28 @@
+#templateContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    grid-area: main;
+  }
+
+  .dashboard-card {
+    width: 250px;
+    height: 200px;
+    display: block;
+    margin: 10px;
+    border: 1px solid darkgray;
+    padding: 5px;
+  }
+
+  h1 {
+    grid-area: header;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+  }

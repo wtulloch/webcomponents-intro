@@ -1,3 +1,10 @@
+const template = document.createElement('template');
+template.innerHTML = `
+<div>
+    <p></p>
+</div>
+`
+
 export default class SimpleComponent extends HTMLElement {
 
     constructor() {
@@ -39,11 +46,15 @@ export default class SimpleComponent extends HTMLElement {
         }
     }
     _render() {
-        this.innerHTML = `
-        <div>
-            <p>${this.placeholder}</p>
-        </div>
-        `;
+        
+        const clearEl = this.firstChild;
+        if(clearEl) {
+            this.removeChild(clearEl);
+        }
+
+        const clone = template.content.cloneNode(true);
+        this.appendChild(clone);
+        this.querySelector('p').innerHTML = this.placeholder;
     }
 }
 
