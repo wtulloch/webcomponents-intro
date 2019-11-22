@@ -69,13 +69,17 @@ export default class TgCard extends HTMLElement {
           }
           .content {
               flex-grow: 1;
+              padding: 5px;
           }
           </style>
-          <div class="titlebar">${this.titlebarText}</div>
-          <div class="content"> </div> 
+          <div class="titlebar">
+       ${this.titlebarText}</div>
+          <div class="content">
+            <slot name="content">nothing here</slot>      
+        </div> 
         `;
 
-        render(template, this);
+        render(template, this.shadowRoot);
     }
 }
 

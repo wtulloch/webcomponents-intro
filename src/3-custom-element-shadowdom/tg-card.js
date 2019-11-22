@@ -39,6 +39,8 @@ export default class TgCard extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <style>
        :host {
+           --header-background: darkblue;
+           --header-color: white;
             display: flex;
             flex-direction: column;
             border: 1px darkgrey solid;
@@ -59,8 +61,8 @@ export default class TgCard extends HTMLElement {
 
           .titlebar {
             display: flex;
-            background-color: darkblue;
-            color: white;
+            background-color: var(--header-background);
+            color: var(--header-color);
             min-height: 40px;
             justify-content: center;
             align-items: center;
