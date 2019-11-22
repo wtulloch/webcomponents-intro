@@ -5,10 +5,16 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../base.css" />
   <style>
-    simple-component > div > p {
+    tg-card > div  {
       font-family: cursive;
       font-size: 2rem;
+      background-color: greenyellow;
     }
+
+    /* tg-card {
+      background-color: pink;
+      border: 5px solid blueviolet;
+    } */
     .input-container {
       display: flex;
       flex-direction: column;
@@ -18,12 +24,12 @@
     #component-container {
       display: flex;
       grid-area: main;
-
     }
+    
   </style>
 
   <script type="module">
-    import './simple-component.js';
+    import './tg-card.js';
   </script>
 </head>
 
@@ -31,14 +37,31 @@
   <main>
   <h1>Shadow DOM - CSS</h1>
   <div class="input-container">
-   
+   <div>
+    <input id="hide-it" type="checkbox" ></input>
+   <label id="hide-label" for="hide-it">Hide it!</label>
+  </div>
   </div>
   <div id="component-container">
-      <simple-component id="one" titlebar-text="The shadow is everywhere"></simple-component>
+      <tg-card  titlebar-text="The shadow is everywhere"></tg-card>
   </div>
 </main>
 
   <script>
+    const checkbox = document.getElementById('hide-it')
+    const card = document.querySelector('tg-card');
+    const label = document.getElementById('hide-label');
+
+    checkbox.onchange = () => {
+      if (checkbox.checked) {
+        card.setAttribute('hidden','');
+        label.innerText = 'Show it!';
+      }else {
+        card.removeAttribute('hidden');
+        label.innerText = 'Hide it!';
+      }
+
+    }
    
   </script>
 

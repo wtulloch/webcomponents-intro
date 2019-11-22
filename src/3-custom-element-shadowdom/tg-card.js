@@ -1,4 +1,4 @@
-export default class SimpleComponent extends HTMLElement {
+export default class TgCard extends HTMLElement {
 
     constructor() {
         super();
@@ -23,7 +23,6 @@ export default class SimpleComponent extends HTMLElement {
     }
 
     disconnectedCallback() {
-        console.log(`SimpleComponent ${this.id}: disconnectedCallback`);
     }
 
 
@@ -33,7 +32,6 @@ export default class SimpleComponent extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
 
         if (oldValue !== newValue) {
-            console.log(`SimpleComponent: ${name} has changed`);
             this._render();
         }
     }
@@ -48,7 +46,17 @@ export default class SimpleComponent extends HTMLElement {
             height: 400px;
             margin: 10px;
             background-color: white;
+            box-sizing: border-box;
+            transition: 0.4s;
           }
+          :host([hidden]) {
+              display: none;
+          }
+          :host(:hover) {
+            box-shadow: 3px 3px 10px 3px rgba(54,52,52,0.42);
+            -webkit-box-shadow: 3px 3px 10px 3px rgba(54,52,52,0.42);
+          }
+
           .titlebar {
             display: flex;
             background-color: darkblue;
@@ -68,6 +76,6 @@ export default class SimpleComponent extends HTMLElement {
     }
 }
 
-if (!customElements.get('simple-component')) {
-    customElements.define('simple-component', SimpleComponent);
+if (!customElements.get('tg-card')) {
+    customElements.define('tg-card', TgCard);
 }
