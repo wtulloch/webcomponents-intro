@@ -5,12 +5,13 @@ export default class SimpleComponent extends HTMLElement {
         this.attachShadow({mode: 'open'});
     }
 
-    set placeholder(value) {
-        this.setAttribute('placeholder', value);
+    set titlebarText(value) {
+        this.setAttribute('titlebar-text', value);
+        this._render();
     }
 
-    get placeholder() {
-        return this.getAttribute('placeholder');
+    get titlebarText() {
+        return this.getAttribute('titlebar-text');
     }
 
     get id() {
@@ -19,8 +20,6 @@ export default class SimpleComponent extends HTMLElement {
 
 
     connectedCallback() {
-        console.log(`SimpleComponent ${this.id}: connectedCallback`)
-        this._render();
     }
 
     disconnectedCallback() {
@@ -29,7 +28,7 @@ export default class SimpleComponent extends HTMLElement {
 
 
     static get observedAttributes() {
-        return ['placeholder'];
+        return ['titlebar-text'];
     }
     attributeChangedCallback(name, oldValue, newValue) {
 
@@ -43,19 +42,28 @@ export default class SimpleComponent extends HTMLElement {
         <style>
        :host {
             display: flex;
-            border: 1px black solid;
-            flex-grow: 0;
-            width: 250px;
-            height: 250px;
+            flex-direction: column;
+            border: 1px darkgrey solid;
+            width: 300px;
+            height: 400px;
             margin: 10px;
             background-color: white;
-            padding: 20px;
+          }
+          .titlebar {
+            display: flex;
+            background-color: darkblue;
+            color: white;
+            min-height: 40px;
+            justify-content: center;
             align-items: center;
-            justify-items: center;
+            flex-grow: 0;
+          }
+          .content {
+              flex-grow: 1;
           }
           </style>
-            <p>${this.placeholder}</p>
-        
+          <div class="titlebar">${this.titlebarText}</div>
+          <div class="content"> </div> 
         `;
     }
 }
