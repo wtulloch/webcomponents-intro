@@ -20,7 +20,6 @@ export default class SimpleComponent extends HTMLElement {
 
     connectedCallback() {
         console.log(`SimpleComponent ${this.id}: connectedCallback`)
-        this.attachShadow({});
         this._render();
     }
 
