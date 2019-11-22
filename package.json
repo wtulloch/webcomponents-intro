@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:template": "es-dev-server --app-index src/1-template-example/index.html --open --watch",
     "start:custom": "es-dev-server --app-index src/2-custom-element-simple/demo.html --node-resolve --open --watch",
+    "start:shadow": "es-dev-server --app-index src/3-custom-element-shadowdom/demo.html --node-resolve --open --watch",
     "start:input": "es-dev-server --app-index src/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch",
     "start:slot": "es-dev-server --app-index src/slot-example/demo/index.html --file-extensions .ts --node-resolve --babel --open --watch"
 
