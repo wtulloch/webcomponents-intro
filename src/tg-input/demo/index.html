@@ -1,13 +1,14 @@
 <html>
     <head>
         <title>simple input</title>
+        <script type="module" src="./tg-input/tg-input.ts"></script>
+        <script type="module" src="../../tg-button/tg-button.ts"></script>
     </head>
     <body>
         <h1>Simple Input - TS</h1>
-        <tg-input></tg-input>
-        <tg-button onclick="clicked">This is a test</tg-button>
-        <script type="module" src="../tg-input/tg-input.ts"></script>
-        <script type="module" src="../../tg-button/tg-button.ts"></script>
+        <div><tg-input></tg-input></div>
+       <div> <tg-button onclick="clicked">This is a test</tg-button></div>
+        
 
         <script>
         function clicked(e) {

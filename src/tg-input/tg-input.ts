@@ -11,6 +11,7 @@ export class TgInput extends LitElement {
       flex-direction: column;
       font-family: roboto;
       font-size: 1.1rem;
+      width: 400px;
     }
     label {
       margin-right: 0.3rem;
@@ -20,7 +21,8 @@ export class TgInput extends LitElement {
   }
   @property({type: String, reflect: true})
   placeholder: String = "placeholder";
-    constructor() {
+    
+  constructor() {
       super();  
     }
     render(){

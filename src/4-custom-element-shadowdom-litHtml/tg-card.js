@@ -73,7 +73,8 @@ export default class TgCard extends HTMLElement {
           }
           </style>
           <div class="titlebar">
-       ${this.titlebarText}</div>
+              <slot name="header">${this.titlebarText} </slot>
+       </div>
           <div class="content">
             <slot name="content">nothing here</slot>      
         </div> 

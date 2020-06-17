@@ -3,11 +3,11 @@ export default class TgCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
+        this._render();
     }
 
     set titlebarText(value) {
         this.setAttribute('titlebar-text', value);
-        this._render();
     }
 
     get titlebarText() {

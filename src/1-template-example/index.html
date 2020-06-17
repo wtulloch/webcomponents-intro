@@ -9,8 +9,8 @@
 
 <body>
   <template id="template">
-    <div class=dashboard-card>
-      <h2>I am a template</h2>
+    <div class="dashboard-card">
+      <h2>I am a teapot</h2>
       <p>This is just some text</p>
     </div>
   </template>
@@ -29,10 +29,17 @@
 function displayTemplate() {
   const template = document.querySelector('#template');
   const targetEl = document.querySelector('#templateContainer');
-  const cloneTemplate = document.importNode(template.content, true);
-  const para = cloneTemplate.querySelector('p')
+  let cloneTemplate;
+  if( count < 5){
+    cloneTemplate = template.content.cloneNode(true);
+  }else {
+    cloneTemplate = template.content;
+  }
+  
+  const para = cloneTemplate.querySelector("p");
   para.innerText = " This is card number " + count;
   count += 1;
+
 
   targetEl.appendChild(cloneTemplate);
 }

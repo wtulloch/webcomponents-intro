@@ -36,7 +36,7 @@ export default class SimpleComponent extends HTMLElement {
 
 
     static get observedAttributes() {
-        return [];
+        return ['placeholder'];
     }
     attributeChangedCallback(name, oldValue, newValue) {
 

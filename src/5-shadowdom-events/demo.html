@@ -55,8 +55,8 @@
     document.addEventListener('tg-submitted', e => {
      let message = ''
       e.detail.forEach(element => {
-       message += `${element.id}: ${element.state},`;
-       messageEl.innerText = message;
+       message += `${element.id}: ${element.state} <br>`;
+       messageEl.innerHTML = message;
      });
       console.log(e.composedPath());
     })
